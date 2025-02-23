@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Abstract;
@@ -28,9 +29,14 @@ namespace DataAccess.Concrete.InMemory
 
         public void Delete(Car car)
         {
-         
-            Car carToDelete=_cars.SingleOrDefault(c=>c.Id==car.Id);
+
+            Car carToDelete = _cars.SingleOrDefault(c => c.Id == car.Id);
             _cars.Remove(car);
+        }
+
+        public Car Get(Expression<Func<Car, bool>> filter)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Car> GetAll()
@@ -38,9 +44,14 @@ namespace DataAccess.Concrete.InMemory
             return _cars;
         }
 
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Car> GetById(int id)
         {
-            return _cars.Where(c=>c.Id == id).ToList();
+            return _cars.Where(c => c.Id == id).ToList();
         }
 
         public void Update(Car car)
