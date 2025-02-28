@@ -5,7 +5,6 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Abstract;
-using Entities.Abstract;
 using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
 
